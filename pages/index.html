@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HiPy</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <a class="btn btn-dark">
+      <i class="material-icons">add_box</i>
+    </a>
+    <div class="jumbotron">
+        <h1>HiPy</h1>
+        <p>Media Organizer</p>
+    </div>
+    <table class="table table-condensed">
+        <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Pass</th>
+            <th>Email</th>
+            <th>Class</th>
+        </tr>
+        % for row in rows:
+            <tr>
+                <td>{{row['id']}}</td>
+                <td>{{row['username']}}</td>
+                <td>{{row['password']}}</td>
+                <td>{{row['email']}}</td>
+                <td>{{row['class']}}</td>
+            </tr>
+        % end
+    </table>
+
+</body>
+</html>
