@@ -18,6 +18,14 @@ def index():
     result = cursor.fetchall()
     cursor.close()
     return template('./pages/index.html',rows=result)
+@route('/music')
+def music():
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM music")
+    result = cursor.fetchall()
+    cursor.close()
+    return template('./pages/music/music.html',rows=result)
+
 
 if __name__ == '__main__':
     run(host=IPAddr, port=5159, reloader=True, debug=True)
