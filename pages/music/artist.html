@@ -17,6 +17,8 @@
     <li><a href="/photos">Photos</a></li>
     <li><a href="/settings">Settings</a></li>
 </ul>
+<a href="/music" class="btn btn-primary">Back</a>
+<h1>Listing all songs by {{artist}}</h1>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -25,18 +27,7 @@
             <th>Album</th>
         </tr>
     </thead>
-    % for row in rows:
-    <tbody>
-        <tr>
-            <td>{{row['title']}}</td>
-            <td>
-                <a href="/music/{{row['artist']}}">{{row['artist']}}</a>
-            </td>
-            <td>{{row['album']}}</td>
 
-        </tr>
-    </tbody>
-    % end
 </table>
 </body>
 </html>
