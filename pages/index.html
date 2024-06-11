@@ -4,14 +4,30 @@
     <title>HiPy</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="/pages/scripts/status.js"></script>
 </head>
 <body>
-<ul class="nav nav-tabs">
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="/music">Music</a></li>
-    <li><a href="/video">Videos</a></li>
-    <li><a href="/photos">Photos</a></li>
-</ul>
+    <h2>Power</h2>
+    <form action="/pw" method="post">
+        <h3 class="avrStatus">{{status}}</h3>
+        <button class="pwrbtn" type="submit">Power</button>
+    </form>
+    <div class="vol">
+        <h2>Volume</h2>
+        <input type="range" min="1" max="100" value="2" class="slider" id="volctrl">
+    </div>
+
+    <h2>Sources</h2>
+    <table>
+        <th>Source</th>
+        % for avr_sources in rows:
+        <tr>
+            <td>{{avr_sources['name']}}</td>
+            <td><a href="/si/{{avr_sources['name']}}">Select</a></td>
+        </tr>
+        % end
+    </table>
+
 
 </body>
 </html>

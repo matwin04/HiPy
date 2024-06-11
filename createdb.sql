@@ -1,26 +1,6 @@
--- createdb.sql
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE sources (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    email TEXT NOT NULL
+    name TEXT
 );
 
-CREATE TABLE IF NOT EXISTS music (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
-    artist TEXT NOT NULL,
-    album TEXT NOT NULL,
-    year INTEGER
-);
-
-CREATE TABLE IF NOT EXISTS videos (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
-    url TEXT NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS photos (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
-    filepath TEXT NOT NULL
-);
+INSERT INTO sources (name) VALUES ('PHONO'), ('CD'), ('TUNER'), ('DVD'), ('VCR');
