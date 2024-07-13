@@ -7,18 +7,44 @@
     <script src="/pages/scripts/status.js"></script>
 </head>
 <body>
-    <h2>Power</h2>
-    <form action="/pw" method="post">
-        <h3 class="avrStatus">{{status}}</h3>
-        <button class="pwrbtn" type="submit">Power</button>
-    </form>
-    <div class="vol">
-        <h2>Volume</h2>
-        <input type="range" min="1" max="100" value="2" class="slider" id="volctrl">
-    </div>
+    <h2>Controls</h2>
+    <table class="table table-bordered">
+
+        <tr>
+            <th>PWR</th>
+            <td class="avrStatus">PWR : {{status}}</td>
+            <td><form action="/pw" method="post">
+                <button class="btn btn-primary" type="submit">Power</button>
+            </form></td>
+        </tr>
+        <tr>
+            <th>MUTE</th>
+            <td class="avrStatus">PWR : {{avr_mute}}</td>
+            <td>
+                <form action="/mu" method="post">
+                    <button class="btn btn-secondary" type="submit">Mute</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th>VOL</th>
+            <td>
+                <a href="/mv/+" class="btn btn-danger">+</a>
+                <a href="/mv/-" class="btn btn-danger">-</a>
+            </td>
+            <td>
+                <form action="/setvol" method="post">
+                    <input type="range" id="vol" name="vol" min="0" max="99" value="{{avr_vol}}">
+                    <button type="submit" class="btn btn-primary">Set</button>
+                </form>
+                <label>{{avr_vol}} %</label>
+            </td>
+
+        </tr>
+    </table>
 
     <h2>Sources</h2>
-    <table>
+    <table class="table table-bordered">
         <th>Source</th>
         % for avr_sources in rows:
         <tr>
